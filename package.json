@@ -1,0 +1,12 @@
+{
+  "name": "lfm-types",
+  "author": "dandandev",
+  "version": "0.0.1",
+  "types": "index.ts",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
