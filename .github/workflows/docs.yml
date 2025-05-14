@@ -8,10 +8,14 @@ on:
 jobs:
   docs:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
     steps:
-      - name: Build
-        uses: erikyo/tsdoc-action@v1
+      - uses: actions/checkout@v2
+      - uses: oven-sh/setup-bun@v2
+      - run: bunx typedoc
+      - uses: peaceiris/actions-gh-pages@v4
         with:
-          source_dir: ./*
-          output_dir: ./docs
-          front_page: README.md
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
