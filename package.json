@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "types": "index.ts",
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "typedoc": "^0.28.4"
   },
   "peerDependencies": {
     "typescript": "^5"
