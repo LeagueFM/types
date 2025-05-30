@@ -89,27 +89,20 @@ export type NowPlaying = {
     duration: null | number;
     lyrics: Lyrics;
   };
-
-  requestsOpen?: boolean;
 };
 
-export type Lyrics =
-  | null
-  | {
-    synced: false;
-    text: {
-      content: string;
-      id?: string;
-    }[];
-  }
-  | {
-    synced: true;
-    text: {
-      start: null | number;
-      content: string;
-      id?: string;
-    }[];
-  };
+export type Lyrics = null | {
+  synced: false;
+  text: {
+    content: string;
+  }[];
+} | {
+  synced: true;
+  text: {
+    start: null | number;
+    content: string;
+  }[];
+};
 
 export type Vacature = {
   id: string;
