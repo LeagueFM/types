@@ -20,6 +20,11 @@ export type User = {
   description: string | null;
   pfp: string;
   banner: string | null;
+  publicUserRole: {
+    id: string;
+    name: string;
+    displayName: string | null;
+  };
 };
 
 export type Banner = {
@@ -91,20 +96,20 @@ export type NowPlaying = {
 export type Lyrics =
   | null
   | {
-      synced: false;
-      text: {
-        content: string;
-        id?: string;
-      }[];
-    }
+    synced: false;
+    text: {
+      content: string;
+      id?: string;
+    }[];
+  }
   | {
-      synced: true;
-      text: {
-        start: null | number;
-        content: string;
-        id?: string;
-      }[];
-    };
+    synced: true;
+    text: {
+      start: null | number;
+      content: string;
+      id?: string;
+    }[];
+  };
 
 export type Vacature = {
   id: string;
@@ -116,12 +121,6 @@ export type Vacature = {
   badgeIcons: string[];
   voiceRequired: boolean;
   file: string;
-};
-
-export type UserRole = {
-  id: string;
-  name: string;
-  displayName: string;
 };
 
 export type FormError = {
