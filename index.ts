@@ -4,13 +4,14 @@ export type Show = {
   end: string;
 
   displayName: string | null;
+  description: string | null;
+  shortDescription: string | null;
   clockedIn: boolean;
   icon: string | null;
   banner: string | null;
-
-  users: (User | null)[];
-
   hasStreamKey: boolean;
+
+  users: User[];
 };
 
 export type User = {
@@ -20,11 +21,13 @@ export type User = {
   description: string | null;
   pfp: string;
   banner: string | null;
-  publicUserRole: {
-    id: string;
-    name: string;
-    displayName: string | null;
-  };
+  publicUserRole: publicUserRole | null;
+};
+
+export type publicUserRole = {
+  id: string;
+  name: string;
+  displayName: string | null;
 };
 
 export type Banner = {
@@ -34,41 +37,36 @@ export type Banner = {
   clickUrl: string | null;
 };
 
-export type DeezerSong = {
+export type transformedSong = {
   id: number;
   title: string;
-  artist: {
+  artists: {
     name: string;
     art: string;
-  };
+  }[];
   art: string;
   preview: string;
   duration: number;
+  isrc: string | null;
+  rank: number;
 };
 
-export type BlogArticle = {
+export type BlogItem = {
   id: string;
   title: string;
-  description: string;
+  description: string | null;
   createdAt: string;
   category: {
     id: string;
     name: string;
     displayName: string;
   };
-  user: {
-    id: string;
-    name: string;
-    displayName: string;
-    description: string;
-    bannerFileName: string;
-    pfp: string;
-    banner: string;
-  } | null;
+  content: string;
+  user: User | null;
   file: string;
 };
 
-export type Top20Item = {
+export type TopSong = {
   id: string;
   place: number;
   weeksInTop: number | null;
@@ -78,30 +76,31 @@ export type Top20Item = {
   deezerId: string;
   placeIncrease: number;
 };
-export type NowPlaying = {
+
+export type parsedNowPlayingInfo = {
   id: string;
   startedAt: number;
-  song: {
-    id: string;
-    title: string;
-    artists: string[];
-    art: string;
-    duration: null | number;
-    lyrics: Lyrics;
-  };
+  song: parsedNowPlaying;
 };
 
-export type Lyrics = null | {
-  synced: false;
-  text: {
-    content: string;
-  }[];
-} | {
-  synced: true;
-  text: {
-    start: null | number;
-    content: string;
-  }[];
+export type parsedNowPlaying = {
+  id: string;
+  title: string;
+  artists: string[];
+  art: string;
+  duration: null | number;
+  lyrics: null | {
+    synced: false;
+    text: {
+      content: string;
+    }[];
+  } | {
+    synced: true;
+    text: {
+      start: null | number;
+      content: string;
+    }[];
+  };
 };
 
 export type Vacature = {
@@ -114,9 +113,4 @@ export type Vacature = {
   badgeIcons: string[];
   voiceRequired: boolean;
   file: string;
-};
-
-export type FormError = {
-  field: string;
-  message: string;
 };
