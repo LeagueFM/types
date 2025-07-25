@@ -74,7 +74,7 @@ export type TopSong = {
   artist: string;
   art: string;
   deezerId: string;
-  placeIncrease: number;
+  placeIncrease: number | null;
 };
 
 export type parsedNowPlayingInfo = {
