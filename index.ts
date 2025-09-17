@@ -21,10 +21,11 @@ export type User = {
   description: string | null;
   pfp: string;
   banner: string | null;
-  publicUserRole: publicUserRole | null;
+  publicUserRole: PublicUserRole | null;
+  isDj: boolean;
 };
 
-export type publicUserRole = {
+export type PublicUserRole = {
   id: string;
   name: string;
   displayName: string | null;
