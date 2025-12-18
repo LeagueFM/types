@@ -65,6 +65,7 @@ export type BlogItem = {
   content: string;
   user: User | null;
   file: string;
+  commentsDisabled: boolean;
 };
 
 export type TopSong = {
