@@ -86,6 +86,7 @@ export type parsedNowPlayingInfo = {
 
 export type parsedNowPlaying = {
   id: string;
+  isGeneral: boolean;
   title: string;
   artists: string[];
   art: string;
