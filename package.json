@@ -2,6 +2,9 @@
   "name": "lfm-types",
   "author": "Oscar & dandandev",
   "version": "1.0.3",
+  "exports": {
+    "socket": "./socket.ts"
+  },
   "main": "index.ts",
   "types": "index.ts",
   "files": [
@@ -15,6 +18,7 @@
   },
   "devDependencies": {
     "@types/bun": "latest",
+    "socket.io": "^4.8.3",
     "typedoc": "^0.28.4"
   },
   "peerDependencies": {
