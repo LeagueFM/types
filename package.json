@@ -1,14 +1,12 @@
 {
   "name": "lfm-types",
   "author": "Oscar & dandandev",
-  "version": "1.0.6",
-  "exports": {
-    "./*": "./*"
-  },
+  "version": "1.0.7",
   "files": [
-    "index.ts",
-    "socket.ts"
+    "index.ts"
   ],
+  "main": "index.ts",
+  "types": "index.ts",
   "license": "MIT",
   "description": "Type definitions for the League-FM API",
   "repository": {
