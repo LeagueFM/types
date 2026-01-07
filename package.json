@@ -3,11 +3,8 @@
   "author": "Oscar & dandandev",
   "version": "1.0.5",
   "exports": {
-    "/": "./index.ts",
-    "socket": "./socket.ts"
+    "./*": "./*"
   },
-  "main": "index.ts",
-  "types": "index.ts",
   "files": [
     "index.ts",
     "socket.ts"
