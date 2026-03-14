@@ -25,6 +25,21 @@ export type User = {
   banner: string | null;
   publicUserRole: PublicUserRole | null;
   isDj: boolean;
+  socialLinks: SocialLink[];
+};
+
+export type SocialLink = {
+  id: string;
+  displayName: string;
+  url: string | null;
+  socialLinkPlatform: SocialLinkPlatform;
+};
+
+export type SocialLinkPlatform = {
+  id: string;
+  name: string;
+  displayName: string;
+  icon: string | null;
 };
 
 export type PublicUserRole = {
