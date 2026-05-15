@@ -129,7 +129,7 @@ export type Vacature = {
   badgeNames: string[];
   badgeIcons: string[];
   voiceRequired: boolean;
-  file: string | string;
+  file: string | null;
 };
 
 export interface ServerToClientEvents {
