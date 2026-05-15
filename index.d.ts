@@ -69,6 +69,20 @@ export type transformedSong = {
   rank: number;
 };
 
+export type unknownTransformedSong = {
+  id: number | null;
+  title: string;
+  artists: {
+    name: string;
+    art: string;
+  }[];
+  art: string;
+  preview: string | null;
+  duration: number | null;
+  isrc: string | null;
+  rank: number | null;
+};
+
 export type BlogItem = {
   id: string;
   title: string;
@@ -90,7 +104,7 @@ export type TopSong = {
   place: number;
   weeksInTop: number | null;
   placeIncrease: number | null;
-  song: transformedSong;
+  song: transformedSong | unknownTransformedSong;
 };
 
 export type parsedNowPlayingInfo = {
