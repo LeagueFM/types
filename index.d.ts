@@ -86,7 +86,7 @@ export type BlogItem = {
 };
 
 export type TopSong = {
-  id: string;
+  id: string | null;
   place: number;
   weeksInTop: number | null;
   placeIncrease: number | null;
