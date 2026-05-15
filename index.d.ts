@@ -81,7 +81,7 @@ export type BlogItem = {
   };
   content: string;
   user: User | null;
-  file: string;
+  file: string | null;
   commentsDisabled: boolean;
 };
 
