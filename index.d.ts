@@ -1,5 +1,3 @@
-import type { Socket } from "socket.io-client";
-
 export type Show = {
   id: string;
   start: string;
@@ -166,5 +164,3 @@ export interface ClientToServerEvents {
   ready(): void;
   enableLyrics(): void;
 }
-
-export type socketType = Socket<ServerToClientEvents, ClientToServerEvents>;
