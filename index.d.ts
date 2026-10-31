@@ -1,4 +1,4 @@
-import type { Server, Socket } from 'socket.io';
+import type { Socket } from "socket.io-client";
 
 export type Show = {
   id: string;
@@ -167,13 +167,4 @@ export interface ClientToServerEvents {
   enableLyrics(): void;
 }
 
-export interface InterServerEvents {
-  // 
-}
-
-export interface SocketData {
-  // 
-}
-
-export type ioType = Server<ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData>;
-export type socketType = Socket<ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData>;
+export type socketType = Socket<ServerToClientEvents, ClientToServerEvents>;
