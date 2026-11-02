@@ -162,5 +162,4 @@ export interface ClientToServerEvents {
   connect(): void;
 
   ready(): void;
-  enableLyrics(): void;
 }
